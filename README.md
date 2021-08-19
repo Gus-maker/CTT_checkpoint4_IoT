@@ -6,9 +6,24 @@ Esse é um guia simples, o grupo pode e deve modificar o template conforme neces
 
 **nome dos alunos:** 
 
+**Gustavo Gonçalves de Araujo - RM85569** 
+
+**Henrique Sartal Santos - RM82172** 
+
+**Iago Manholetti Alexandrino - RM84314**
+
+**João Carlos Melo Azevedo - RM85744** 
+
+
+**Leonardo Andrade Antunes de Bem - RM86062** 
+
+**Martin David Valdes Olcese - RM85521**
+
 **Turma:**
+**2TDSJ**
 
 **Ano:**
+**2021**
 
 ## Objetivo / descrição do Projeto
 
@@ -17,8 +32,6 @@ Explique de forma clara qual o objeto deste projeto, para que serve e comente as
 ## Diagrama do projeto
 
 Adicione uma ou mais fotos do projeto, pode ser uma imagem da arquitetura, do circuito eletrônico do Flow desenvolvido. 
-
-<img src="/imagem.jpg" width="550">
 
 
 ## Como usar 
@@ -31,8 +44,6 @@ Explique como rodar o seu projeto. Quais programas instalar, como configurar...
 Ou qualquer outra tabulação:
 
 - [x] Youtube
-- [ ] Facebook 
-- [x] Instagram
 
 Pode adicionar algum trecho de código, por exemplo para clonar esse repositório:
 
@@ -46,7 +57,7 @@ Pode adicionar algum trecho de código, por exemplo para clonar esse repositóri
 
 Adicione o link para assistir ao vídeo do projeto funcionando.
 
-[Link para o video youtube](https://www.youtube.com/watch?v=xva71wynxS0)
+[Link para o video youtube]()
 
 
 ### Referências 
