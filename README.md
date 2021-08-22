@@ -14,7 +14,7 @@ Esse é um guia simples, o grupo pode e deve modificar o template conforme neces
 
 **João Carlos Melo Azevedo - RM85744** 
 
-**José Dijalbas Francisco dos Santos Bezerra - RM84254 **
+**José Dijalbas Francisco dos Santos Bezerra - RM84254**
 
 **Leonardo Andrade Antunes de Bem - RM86062** 
 
