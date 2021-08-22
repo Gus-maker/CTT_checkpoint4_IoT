@@ -1,360 +1,29 @@
 [
     {
-        "id": "8a6ce82f38fb9b78",
-        "type": "tab",
-        "label": "Checkpoint4",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "49ff88604e6c24cf",
-        "type": "json",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": true,
-        "x": 410,
-        "y": 240,
-        "wires": [
-            [
-                "3db72ce893f16ec4",
-                "168c7c867679a934",
-                "f8c0f92fbcb353cb",
-                "94cfb8b7ed519d28"
-            ]
-        ]
-    },
-    {
-        "id": "3db72ce893f16ec4",
-        "type": "change",
-        "z": "8a6ce82f38fb9b78",
-        "name": "Temperatura",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.Temperatura",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 690,
-        "y": 240,
-        "wires": [
-            [
-                "d1bd04bc55950519"
-            ]
-        ]
-    },
-    {
-        "id": "168c7c867679a934",
-        "type": "change",
-        "z": "8a6ce82f38fb9b78",
-        "name": "Luminosidade",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.Luminosidade",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 680,
-        "y": 320,
-        "wires": [
-            [
-                "dc12ae6a99bb2f08"
-            ]
-        ]
-    },
-    {
-        "id": "f8c0f92fbcb353cb",
-        "type": "change",
-        "z": "8a6ce82f38fb9b78",
-        "name": "Velocidade do Vento",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.Vento",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 420,
-        "wires": [
-            [
-                "2a43bd7cf30ad5f4"
-            ]
-        ]
-    },
-    {
-        "id": "3f9ad015f5c22fcf",
-        "type": "mqtt in",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "topic": "checkiot4",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "571256e4.5b4c08",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "x": 420,
-        "y": 480,
-        "wires": [
-            [
-                "a7d672586f2b58f9"
-            ]
-        ]
-    },
-    {
-        "id": "a7d672586f2b58f9",
-        "type": "debug",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 950,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "55df3e049b87dfd0",
-        "type": "serial in",
-        "z": "8a6ce82f38fb9b78",
-        "name": "COM6",
-        "serial": "cf744659.0c44a8",
-        "x": 170,
-        "y": 160,
-        "wires": [
-            [
-                "49ff88604e6c24cf"
-            ]
-        ]
-    },
-    {
-        "id": "2a43bd7cf30ad5f4",
-        "type": "ui_chart",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "group": "2a60fa61.f65a86",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "label": "Velocidade do Vento",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": true,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "x": 1040,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dc12ae6a99bb2f08",
-        "type": "ui_chart",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "group": "2a60fa61.f65a86",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "label": "Luminosidade",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": true,
-        "colors": [
-            "#ffffff",
-            "#aec7e8",
-            "#ff7f0e",
-            "#ffffff",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "x": 920,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4c5dc6eed49926c1",
+        "id": "c2312c584ae22b64",
         "type": "ui_gauge",
         "z": "8a6ce82f38fb9b78",
         "name": "",
-        "group": "e8541da61e2a0f3d",
-        "order": 4,
-        "width": "8",
-        "height": "10",
-        "gtype": "gage",
-        "title": "Temperatura",
-        "label": "units",
+        "group": "2a60fa61.f65a86",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Velocidade do Vento",
+        "label": "km/h",
         "format": "{{value}}",
-        "min": "-20",
-        "max": "50",
+        "min": "0",
+        "max": "90",
         "colors": [
-            "#14b1ff",
-            "#f59a19",
-            "#ff0000"
+            "#787878",
+            "#ababab",
+            "#2ed5ff"
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1010,
-        "y": 240,
+        "x": 1040,
+        "y": 400,
         "wires": []
-    },
-    {
-        "id": "94cfb8b7ed519d28",
-        "type": "mqtt out",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "topic": "checkiot4",
-        "qos": "2",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "571256e4.5b4c08",
-        "x": 680,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "d1bd04bc55950519",
-        "type": "ui_slider",
-        "z": "8a6ce82f38fb9b78",
-        "name": "",
-        "label": "slider",
-        "tooltip": "",
-        "group": "2a60fa61.f65a86",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "-20",
-        "max": "50",
-        "step": 1,
-        "x": 850,
-        "y": 240,
-        "wires": [
-            [
-                "4c5dc6eed49926c1"
-            ]
-        ]
-    },
-    {
-        "id": "571256e4.5b4c08",
-        "type": "mqtt-broker",
-        "name": "broker.hivemq.com",
-        "broker": "broker.hivemq.com",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "cf744659.0c44a8",
-        "type": "serial-port",
-        "serialport": "COM6",
-        "serialbaud": "115200",
-        "databits": "8",
-        "parity": "none",
-        "stopbits": "1",
-        "waitfor": "",
-        "dtr": "none",
-        "rts": "none",
-        "cts": "none",
-        "dsr": "none",
-        "newline": "\\n",
-        "bin": "false",
-        "out": "char",
-        "addchar": "",
-        "responsetimeout": "10000"
     },
     {
         "id": "2a60fa61.f65a86",
@@ -364,22 +33,12 @@
         "order": 4,
         "disp": true,
         "width": "8",
-        "collapse": false
-    },
-    {
-        "id": "e8541da61e2a0f3d",
-        "type": "ui_group",
-        "name": "Medidores",
-        "tab": "54938b6b.1ca0f4",
-        "order": 1,
-        "disp": true,
-        "width": "8",
         "collapse": true
     },
     {
         "id": "54938b6b.1ca0f4",
         "type": "ui_tab",
-        "name": "Home",
+        "name": "NAC 4 - GRUPO CTT",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
