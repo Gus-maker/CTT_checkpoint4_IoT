@@ -1,1 +1,653 @@
-[{"id":"49dda77.6f4bf58","type":"tab","label":"Checkpoint4","disabled":false,"info":""},{"id":"748eded6.c21c","type":"json","z":"49dda77.6f4bf58","name":"","property":"payload","action":"","pretty":true,"x":350,"y":160,"wires":[["1d0692c0.9167fd","5741a27e.3c73fc","d6683138.87e16","d9ba143.6ed4de8"]]},{"id":"1d0692c0.9167fd","type":"change","z":"49dda77.6f4bf58","name":"Temperatura","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.Temperatura","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":160,"wires":[["5817063c.ef0258"]]},{"id":"5741a27e.3c73fc","type":"change","z":"49dda77.6f4bf58","name":"Luminosidade","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.Luminosidade","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":540,"y":220,"wires":[["c5508565.93eec8"]]},{"id":"d6683138.87e16","type":"change","z":"49dda77.6f4bf58","name":"Velocidade do Vento","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.Vento","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":540,"y":280,"wires":[["7ca7e3b6.46a21c"]]},{"id":"fa9492f7.7fed9","type":"mqtt in","z":"49dda77.6f4bf58","name":"","topic":"checkiot4/temperatura","qos":"2","datatype":"auto","broker":"571256e4.5b4c08","nl":false,"rap":true,"rh":0,"x":240,"y":380,"wires":[["1a180862.34a8b8"]]},{"id":"7693dcba.7de184","type":"serial in","z":"49dda77.6f4bf58","name":"COM6","serial":"cf744659.0c44a8","x":170,"y":160,"wires":[["748eded6.c21c"]]},{"id":"5c2ca1f5.28729","type":"ui_chart","z":"49dda77.6f4bf58","name":"","group":"2a60fa61.f65a86","order":6,"width":0,"height":0,"label":"Luminosidade","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"1","ymax":"1000","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"60","cutout":0,"useOneColor":false,"useUTC":true,"colors":["#00aaff","#aec7e8","#ff7f0e","#ffffff","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"outputs":1,"useDifferentColor":false,"x":500,"y":440,"wires":[[]]},{"id":"1a180862.34a8b8","type":"ui_gauge","z":"49dda77.6f4bf58","name":"","group":"29cade35.995cb2","order":1,"width":8,"height":"9","gtype":"gage","title":"Temperatura","label":"°C","format":"{{value}}","min":"-20","max":"180","colors":["#14b1ff","#f59a19","#ff0000"],"seg1":"","seg2":"","x":490,"y":380,"wires":[]},{"id":"5817063c.ef0258","type":"mqtt out","z":"49dda77.6f4bf58","name":"","topic":"checkiot4/temperatura","qos":"2","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"571256e4.5b4c08","x":800,"y":160,"wires":[]},{"id":"7c16f07c.b7a77","type":"ui_gauge","z":"49dda77.6f4bf58","name":"","group":"2a60fa61.f65a86","order":3,"width":0,"height":0,"gtype":"donut","title":"Velocidade do Vento","label":"km/h","format":"{{value}}","min":"0","max":"90","colors":["#787878","#ababab","#2ed5ff"],"seg1":"","seg2":"","x":520,"y":520,"wires":[]},{"id":"7765eb40.bc2704","type":"twitter in","z":"49dda77.6f4bf58","twitter":"","tags":"@turn_trash","user":"user","name":"Tweets","inputs":0,"x":370,"y":700,"wires":[["7d3af18.406e01"]]},{"id":"7d3af18.406e01","type":"function","z":"49dda77.6f4bf58","name":"recebe_tweet","func":"msg.payload = msg.tweet;\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":620,"y":700,"wires":[["63cf6c27.8e50e4"]]},{"id":"63cf6c27.8e50e4","type":"debug","z":"49dda77.6f4bf58","name":"","active":true,"tosidebar":true,"console":true,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":900,"y":700,"wires":[]},{"id":"9d6a28a5.377a58","type":"switch","z":"49dda77.6f4bf58","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gte","v":"80.00","vt":"str"}],"checkall":"true","repair":false,"outputs":1,"x":510,"y":580,"wires":[["a44443b1.58e24"]]},{"id":"a44443b1.58e24","type":"function","z":"49dda77.6f4bf58","name":"","func":"msg.payload = \"Velocidade do vento acima de 80km/h, As pessoas que irao sair de casa, cuidado!\";\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":700,"y":580,"wires":[["15a9f459.f95dec"]]},{"id":"15a9f459.f95dec","type":"twitter out","z":"49dda77.6f4bf58","twitter":"","name":"Tweet","x":870,"y":580,"wires":[]},{"id":"fe19da47.5cc6a8","type":"cloudantplus in","z":"49dda77.6f4bf58","name":"Cloudant_Listar","cloudant":"f4b677a2.396988","database":"twitter_database","service":"_ext_","search":"_all_","design":"","index":"","x":660,"y":800,"wires":[["fa8175ee.59f148"]]},{"id":"cff74b8c.feacd8","type":"inject","z":"49dda77.6f4bf58","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":440,"y":800,"wires":[["fe19da47.5cc6a8"]]},{"id":"fa8175ee.59f148","type":"debug","z":"49dda77.6f4bf58","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":890,"y":800,"wires":[]},{"id":"c5508565.93eec8","type":"mqtt out","z":"49dda77.6f4bf58","name":"","topic":"checkiot4/luminosidade","qos":"2","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"571256e4.5b4c08","x":810,"y":220,"wires":[]},{"id":"7ca7e3b6.46a21c","type":"mqtt out","z":"49dda77.6f4bf58","name":"","topic":"checkiot4/velocidade_vento","qos":"2","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"571256e4.5b4c08","x":820,"y":280,"wires":[]},{"id":"5df3317a.8df87","type":"mqtt in","z":"49dda77.6f4bf58","name":"","topic":"checkiot4/luminosidade","qos":"2","datatype":"auto","broker":"571256e4.5b4c08","nl":false,"rap":true,"rh":0,"x":240,"y":440,"wires":[["5c2ca1f5.28729"]]},{"id":"ac119a32.045708","type":"mqtt in","z":"49dda77.6f4bf58","name":"","topic":"checkiot4/velocidade_vento","qos":"2","datatype":"auto","broker":"571256e4.5b4c08","nl":false,"rap":true,"rh":0,"x":260,"y":520,"wires":[["7c16f07c.b7a77","9d6a28a5.377a58"]]},{"id":"d9ba143.6ed4de8","type":"cloudantplus out","z":"49dda77.6f4bf58","name":"Cloudant_Gravar","cloudant":"f4b677a2.396988","database":"twitter_database","service":"_ext_","payonly":true,"operation":"insert","x":550,"y":100,"wires":[["ba069908.8a6a38"]]},{"id":"ba069908.8a6a38","type":"debug","z":"49dda77.6f4bf58","name":"","active":true,"tosidebar":true,"console":true,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":800,"y":100,"wires":[]},{"id":"571256e4.5b4c08","type":"mqtt-broker","name":"broker.hivemq.com","broker":"broker.hivemq.com","port":"1883","clientid":"","usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""},{"id":"cf744659.0c44a8","type":"serial-port","serialport":"COM6","serialbaud":"115200","databits":"8","parity":"none","stopbits":"1","waitfor":"","dtr":"none","rts":"none","cts":"none","dsr":"none","newline":"\\n","bin":"false","out":"char","addchar":"","responsetimeout":"10000"},{"id":"2a60fa61.f65a86","type":"ui_group","name":"Gráficos","tab":"54938b6b.1ca0f4","order":4,"disp":true,"width":"6","collapse":true},{"id":"29cade35.995cb2","type":"ui_group","name":"Medidores","tab":"54938b6b.1ca0f4","order":1,"disp":true,"width":"8","collapse":true},{"id":"f4b677a2.396988","type":"cloudantplus","host":"https://apikey-v2-2dup68vxp7vlvpe1y2l47imwl2t7mgckkmlu3x7k2heo:01266ec0c547fe407510f6c683823e94@42cbac4b-3c62-48bf-b36e-284264a78d97-bluemix.cloudantnosqldb.appdomain.cloud","name":"cloudant_gravar"},{"id":"54938b6b.1ca0f4","type":"ui_tab","name":"Nac 4 CTT","icon":"dashboard","disabled":false,"hidden":false}]
+[
+    {
+        "id": "49dda77.6f4bf58",
+        "type": "tab",
+        "label": "Checkpoint4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "748eded6.c21c",
+        "type": "json",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "1d0692c0.9167fd",
+                "5741a27e.3c73fc",
+                "d6683138.87e16"
+            ]
+        ]
+    },
+    {
+        "id": "1d0692c0.9167fd",
+        "type": "change",
+        "z": "49dda77.6f4bf58",
+        "name": "Temperatura",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "5817063c.ef0258"
+            ]
+        ]
+    },
+    {
+        "id": "5741a27e.3c73fc",
+        "type": "change",
+        "z": "49dda77.6f4bf58",
+        "name": "Luminosidade",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Luminosidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 220,
+        "wires": [
+            [
+                "c5508565.93eec8"
+            ]
+        ]
+    },
+    {
+        "id": "d6683138.87e16",
+        "type": "change",
+        "z": "49dda77.6f4bf58",
+        "name": "Velocidade do Vento",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Vento",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "7ca7e3b6.46a21c"
+            ]
+        ]
+    },
+    {
+        "id": "fa9492f7.7fed9",
+        "type": "mqtt in",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "topic": "checkiot4/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "571256e4.5b4c08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 380,
+        "wires": [
+            [
+                "1a180862.34a8b8"
+            ]
+        ]
+    },
+    {
+        "id": "7693dcba.7de184",
+        "type": "serial in",
+        "z": "49dda77.6f4bf58",
+        "name": "COM6",
+        "serial": "cf744659.0c44a8",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "748eded6.c21c"
+            ]
+        ]
+    },
+    {
+        "id": "5c2ca1f5.28729",
+        "type": "ui_chart",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "group": "2a60fa61.f65a86",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Luminosidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "1",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#00aaff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#ffffff",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 500,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a180862.34a8b8",
+        "type": "ui_gauge",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "group": "29cade35.995cb2",
+        "order": 1,
+        "width": 8,
+        "height": "9",
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "180",
+        "colors": [
+            "#14b1ff",
+            "#f59a19",
+            "#ff0000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 490,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5817063c.ef0258",
+        "type": "mqtt out",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "topic": "checkiot4/temperatura",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "571256e4.5b4c08",
+        "x": 800,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7c16f07c.b7a77",
+        "type": "ui_gauge",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "group": "2a60fa61.f65a86",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Velocidade do Vento",
+        "label": "km/h",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "90",
+        "colors": [
+            "#787878",
+            "#ababab",
+            "#2ed5ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 520,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7765eb40.bc2704",
+        "type": "twitter in",
+        "z": "49dda77.6f4bf58",
+        "twitter": "",
+        "tags": "@turn_trash",
+        "user": "user",
+        "name": "Tweets",
+        "inputs": 0,
+        "x": 370,
+        "y": 700,
+        "wires": [
+            [
+                "7d3af18.406e01"
+            ]
+        ]
+    },
+    {
+        "id": "7d3af18.406e01",
+        "type": "function",
+        "z": "49dda77.6f4bf58",
+        "name": "recebe_tweet",
+        "func": "msg.payload = msg.tweet;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 700,
+        "wires": [
+            [
+                "63cf6c27.8e50e4"
+            ]
+        ]
+    },
+    {
+        "id": "63cf6c27.8e50e4",
+        "type": "debug",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "9d6a28a5.377a58",
+        "type": "switch",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "80.00",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 580,
+        "wires": [
+            [
+                "a44443b1.58e24"
+            ]
+        ]
+    },
+    {
+        "id": "a44443b1.58e24",
+        "type": "function",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "func": "msg.payload = \"Velocidade do vento acima de 80km/h, As pessoas que irao sair de casa, cuidado!\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 580,
+        "wires": [
+            [
+                "15a9f459.f95dec"
+            ]
+        ]
+    },
+    {
+        "id": "15a9f459.f95dec",
+        "type": "twitter out",
+        "z": "49dda77.6f4bf58",
+        "twitter": "",
+        "name": "Tweet",
+        "x": 870,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "8c14fa33.a85d38",
+        "type": "function",
+        "z": "49dda77.6f4bf58",
+        "name": "recebe_tweet",
+        "func": "msg.payload = msg.tweet;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 800,
+        "wires": [
+            [
+                "dc5657aa.7243c8"
+            ]
+        ]
+    },
+    {
+        "id": "8565e412.59e698",
+        "type": "debug",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "dc5657aa.7243c8",
+        "type": "cloudantplus out",
+        "z": "49dda77.6f4bf58",
+        "name": "Cloudant_Gravar",
+        "cloudant": "f4b677a2.396988",
+        "database": "twitter_database",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 930,
+        "y": 800,
+        "wires": [
+            [
+                "8565e412.59e698"
+            ]
+        ]
+    },
+    {
+        "id": "29e3f93a.778fa6",
+        "type": "twitter in",
+        "z": "49dda77.6f4bf58",
+        "twitter": "",
+        "tags": "@trash_turn",
+        "user": "user",
+        "name": "Tweets",
+        "inputs": 0,
+        "x": 370,
+        "y": 800,
+        "wires": [
+            [
+                "8c14fa33.a85d38"
+            ]
+        ]
+    },
+    {
+        "id": "fe19da47.5cc6a8",
+        "type": "cloudantplus in",
+        "z": "49dda77.6f4bf58",
+        "name": "Cloudant_Listar",
+        "cloudant": "f4b677a2.396988",
+        "database": "twitter_database",
+        "service": "_ext_",
+        "search": "_all_",
+        "design": "",
+        "index": "",
+        "x": 740,
+        "y": 960,
+        "wires": [
+            [
+                "fa8175ee.59f148"
+            ]
+        ]
+    },
+    {
+        "id": "cff74b8c.feacd8",
+        "type": "inject",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 960,
+        "wires": [
+            [
+                "fe19da47.5cc6a8"
+            ]
+        ]
+    },
+    {
+        "id": "fa8175ee.59f148",
+        "type": "debug",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "c5508565.93eec8",
+        "type": "mqtt out",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "topic": "checkiot4/luminosidade",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "571256e4.5b4c08",
+        "x": 810,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7ca7e3b6.46a21c",
+        "type": "mqtt out",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "topic": "checkiot4/velocidade_vento",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "571256e4.5b4c08",
+        "x": 820,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5df3317a.8df87",
+        "type": "mqtt in",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "topic": "checkiot4/luminosidade",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "571256e4.5b4c08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "5c2ca1f5.28729"
+            ]
+        ]
+    },
+    {
+        "id": "ac119a32.045708",
+        "type": "mqtt in",
+        "z": "49dda77.6f4bf58",
+        "name": "",
+        "topic": "checkiot4/velocidade_vento",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "571256e4.5b4c08",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 260,
+        "y": 520,
+        "wires": [
+            [
+                "7c16f07c.b7a77",
+                "9d6a28a5.377a58"
+            ]
+        ]
+    },
+    {
+        "id": "571256e4.5b4c08",
+        "type": "mqtt-broker",
+        "name": "broker.hivemq.com",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cf744659.0c44a8",
+        "type": "serial-port",
+        "serialport": "COM6",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "2a60fa61.f65a86",
+        "type": "ui_group",
+        "name": "Gráficos",
+        "tab": "54938b6b.1ca0f4",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "29cade35.995cb2",
+        "type": "ui_group",
+        "name": "Medidores",
+        "tab": "54938b6b.1ca0f4",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": true
+    },
+    {
+        "id": "f4b677a2.396988",
+        "type": "cloudantplus",
+        "host": "https://apikey-v2-2dup68vxp7vlvpe1y2l47imwl2t7mgckkmlu3x7k2heo:01266ec0c547fe407510f6c683823e94@42cbac4b-3c62-48bf-b36e-284264a78d97-bluemix.cloudantnosqldb.appdomain.cloud",
+        "name": "cloudant_gravar"
+    },
+    {
+        "id": "54938b6b.1ca0f4",
+        "type": "ui_tab",
+        "name": "Nac 4 CTT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
