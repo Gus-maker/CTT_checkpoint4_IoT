@@ -1,7 +1,5 @@
 # Template para desenvolvimento e entrega de NAC
 
-Esse é um guia simples, o grupo pode e deve modificar o template conforme necessidade. 
-
 # Nome do projeto
 
 **nome dos alunos:** 
@@ -28,16 +26,33 @@ Esse é um guia simples, o grupo pode e deve modificar o template conforme neces
 
 ## Objetivo / descrição do Projeto
 
-Explique de forma clara qual o objeto deste projeto, para que serve e comente as principais tecnologias utilizadas. 
+O objetivo deste trabalho é fazer a própria rede meterológica, acompanhando a temperatura, velocidade do  vento e a luminosidade, com base no nosso circuito feito no simulador SimulIDE, códigos arduino e node red, com um banco de dados em cloud da ibm, comunicação MQTT e publicação de mensagens no Twitter.
+
+
+## Descrição Passo a Passo
+
+1 - Nós recebemos os valores do SimulIde passamos via serial e mandamos o valor da serial em json do node, dívidido cada valor por tópico.
+
+2 - Em seguida pegamos cada valor dos tópicos e colocamos em nosso Dashboard.
+
+3 - A velocidade do vento quando está acima de 80km/h realizamos um tweet através de uma função em nosso Tweeter de desenvovlvedor @trash_turn
+
+4 - Printamos esse Tweet no nosso nó debug.
+
+5 - Pegamos os tweets feitos e salvamos em um banco de dados da IBM cloud.
+
+6 - Ao pressionar o injection recebemos os objetos presentes no banco de dados que tem os valores dos sensores.
+
 
 ## Diagrama do projeto
 
-Adicione uma ou mais fotos do projeto, pode ser uma imagem da arquitetura, do circuito eletrônico do Flow desenvolvido. 
+![image](https://user-images.githubusercontent.com/59034973/130476794-7d2303e5-d70e-48b6-b505-f6d1b32cf414.png)
+![Flow_image](https://user-images.githubusercontent.com/59034973/130477030-7b7db3c2-a453-485e-92bc-042c0aa02d26.PNG)
 
 
 ## Como usar 
 
-Explique como rodar o seu projeto. Quais programas instalar, como configurar... 
+
 
 * Pode ser utilizado marcadores
 * Para ajudar na formatação
