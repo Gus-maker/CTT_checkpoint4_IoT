@@ -73,7 +73,7 @@ Pode adicionar algum trecho de código, por exemplo para clonar esse repositóri
 
 Adicione o link para assistir ao vídeo do projeto funcionando.
 
-[Link para o video youtube]()
+[https://youtu.be/8IRPscfgNbw]()
 
 
 ### Referências 
