@@ -1,215 +1,34 @@
 [
     {
-        "id": "8a6ce82f38fb9b78",
+        "id": "9477f8bdc592a3a4",
         "type": "tab",
-        "label": "Checkpoint4",
+        "label": "Flow_Leo",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "cf744659.0c44a8",
-        "type": "serial-port",
-        "serialport": "COM6",
-        "serialbaud": "115200",
-        "databits": "8",
-        "parity": "none",
-        "stopbits": "1",
-        "waitfor": "",
-        "dtr": "none",
-        "rts": "none",
-        "cts": "none",
-        "dsr": "none",
-        "newline": "\\n",
-        "bin": "false",
-        "out": "char",
-        "addchar": "",
-        "responsetimeout": "10000"
-    },
-    {
-        "id": "2a60fa61.f65a86",
-        "type": "ui_group",
-        "name": "Gráficos",
-        "tab": "54938b6b.1ca0f4",
-        "order": 4,
-        "disp": true,
-        "width": "8",
-        "collapse": true
-    },
-    {
-        "id": "571256e4.5b4c08",
-        "type": "mqtt-broker",
-        "name": "broker.hivemq.com",
-        "broker": "broker.hivemq.com",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "54938b6b.1ca0f4",
-        "type": "ui_tab",
-        "name": "NAC 4 - GRUPO CTT",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "c6e5014c939d29e5",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-custom",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#ffffff",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#ffffff",
-                "baseFont": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
-                "reset": false
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#fff700",
-                    "value": "#ffffff",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#00aaff",
-                    "edited": true
-                },
-                "page-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": true
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": true
-                },
-                "group-textColor": {
-                    "value": "#000000",
-                    "edited": true
-                },
-                "group-borderColor": {
-                    "value": "#000000",
-                    "edited": true
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": true
-                },
-                "widget-textColor": {
-                    "value": "#000000",
-                    "edited": true
-                },
-                "widget-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": true
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": true
-                },
-                "base-font": {
-                    "value": "Century Gothic,CenturyGothic,AppleGothic,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "e8541da61e2a0f3d",
-        "type": "ui_group",
-        "name": "Medidores",
-        "tab": "54938b6b.1ca0f4",
-        "order": 1,
-        "disp": true,
-        "width": "8",
-        "collapse": true
-    },
-    {
-        "id": "e1672556bbc592e0",
-        "type": "ui_group",
-        "name": "Grupo-1",
-        "tab": "54938b6b.1ca0f4",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "49ff88604e6c24cf",
+        "id": "86b69261f06c5227",
         "type": "json",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": true,
-        "x": 410,
-        "y": 240,
+        "x": 450,
+        "y": 320,
         "wires": [
             [
-                "3db72ce893f16ec4",
-                "168c7c867679a934",
-                "f8c0f92fbcb353cb",
-                "94cfb8b7ed519d28"
+                "a6d76ba10f418a5a",
+                "0631d02cba42cd99",
+                "eb328caf30d66b97",
+                "05087e2ffa85bb28"
             ]
         ]
     },
     {
-        "id": "3db72ce893f16ec4",
+        "id": "a6d76ba10f418a5a",
         "type": "change",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "Temperatura",
         "rules": [
             {
@@ -225,18 +44,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 670,
-        "y": 240,
+        "x": 710,
+        "y": 320,
         "wires": [
             [
-                "4c5dc6eed49926c1"
+                "3570c43cdf468a1e"
             ]
         ]
     },
     {
-        "id": "168c7c867679a934",
+        "id": "0631d02cba42cd99",
         "type": "change",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "Luminosidade",
         "rules": [
             {
@@ -252,18 +71,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 320,
+        "x": 720,
+        "y": 400,
         "wires": [
             [
-                "dc12ae6a99bb2f08"
+                "cde835669dd6a7e7"
             ]
         ]
     },
     {
-        "id": "f8c0f92fbcb353cb",
+        "id": "eb328caf30d66b97",
         "type": "change",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "Velocidade do Vento",
         "rules": [
             {
@@ -279,18 +98,19 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 400,
+        "x": 740,
+        "y": 480,
         "wires": [
             [
-                "c2312c584ae22b64"
+                "c0dbc376745c843d",
+                "51db937dba603257"
             ]
         ]
     },
     {
-        "id": "3f9ad015f5c22fcf",
+        "id": "0c76a4855955eb78",
         "type": "mqtt in",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
         "topic": "checkiot4",
         "qos": "2",
@@ -299,51 +119,51 @@
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 420,
-        "y": 500,
+        "x": 720,
+        "y": 140,
         "wires": [
             [
-                "a7d672586f2b58f9"
+                "4a94f5acb3072b6d"
             ]
         ]
     },
     {
-        "id": "a7d672586f2b58f9",
+        "id": "4a94f5acb3072b6d",
         "type": "debug",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
-        "y": 500,
+        "x": 910,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "55df3e049b87dfd0",
+        "id": "b8721fdfc177d62c",
         "type": "serial in",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "COM6",
         "serial": "cf744659.0c44a8",
-        "x": 170,
-        "y": 160,
+        "x": 210,
+        "y": 240,
         "wires": [
             [
-                "49ff88604e6c24cf"
+                "86b69261f06c5227"
             ]
         ]
     },
     {
-        "id": "dc12ae6a99bb2f08",
+        "id": "cde835669dd6a7e7",
         "type": "ui_chart",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
         "group": "2a60fa61.f65a86",
-        "order": 4,
+        "order": 6,
         "width": 0,
         "height": 0,
         "label": "Luminosidade",
@@ -374,21 +194,21 @@
         ],
         "outputs": 1,
         "useDifferentColor": false,
-        "x": 1020,
-        "y": 320,
+        "x": 1060,
+        "y": 400,
         "wires": [
             []
         ]
     },
     {
-        "id": "4c5dc6eed49926c1",
+        "id": "3570c43cdf468a1e",
         "type": "ui_gauge",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
-        "group": "e8541da61e2a0f3d",
-        "order": 4,
-        "width": "8",
-        "height": "12",
+        "group": "d34817ad2fd57a35",
+        "order": 1,
+        "width": 8,
+        "height": "9",
         "gtype": "gage",
         "title": "Temperatura",
         "label": "°C",
@@ -402,14 +222,14 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1010,
-        "y": 240,
+        "x": 1050,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "94cfb8b7ed519d28",
+        "id": "05087e2ffa85bb28",
         "type": "mqtt out",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
         "topic": "checkiot4",
         "qos": "2",
@@ -420,14 +240,14 @@
         "correl": "",
         "expiry": "",
         "broker": "571256e4.5b4c08",
-        "x": 680,
-        "y": 120,
+        "x": 720,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "c2312c584ae22b64",
+        "id": "c0dbc376745c843d",
         "type": "ui_gauge",
-        "z": "8a6ce82f38fb9b78",
+        "z": "9477f8bdc592a3a4",
         "name": "",
         "group": "2a60fa61.f65a86",
         "order": 3,
@@ -446,8 +266,187 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1040,
-        "y": 400,
+        "x": 1080,
+        "y": 480,
         "wires": []
+    },
+    {
+        "id": "89b4e92c61183867",
+        "type": "twitter in",
+        "z": "9477f8bdc592a3a4",
+        "twitter": "",
+        "tags": "@turn_trash",
+        "user": "user",
+        "name": "Tweets",
+        "inputs": 0,
+        "x": 410,
+        "y": 780,
+        "wires": [
+            [
+                "809f5ef8670517c6"
+            ]
+        ]
+    },
+    {
+        "id": "809f5ef8670517c6",
+        "type": "function",
+        "z": "9477f8bdc592a3a4",
+        "name": "recebe_tweet",
+        "func": "msg.payload = msg.tweet;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 780,
+        "wires": [
+            [
+                "0f5766d9ef67ca6e"
+            ]
+        ]
+    },
+    {
+        "id": "0f5766d9ef67ca6e",
+        "type": "debug",
+        "z": "9477f8bdc592a3a4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "51db937dba603257",
+        "type": "switch",
+        "z": "9477f8bdc592a3a4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "80.00",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 870,
+        "y": 560,
+        "wires": [
+            [
+                "25b283f3e51bdd7a"
+            ]
+        ]
+    },
+    {
+        "id": "25b283f3e51bdd7a",
+        "type": "function",
+        "z": "9477f8bdc592a3a4",
+        "name": "",
+        "func": "msg.payload = \"Velocidade do vento acima de 80km/h\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 640,
+        "wires": [
+            [
+                "97f7656c3ccff0cd"
+            ]
+        ]
+    },
+    {
+        "id": "97f7656c3ccff0cd",
+        "type": "twitter out",
+        "z": "9477f8bdc592a3a4",
+        "twitter": "",
+        "name": "Tweet",
+        "x": 1270,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "571256e4.5b4c08",
+        "type": "mqtt-broker",
+        "name": "broker.hivemq.com",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cf744659.0c44a8",
+        "type": "serial-port",
+        "serialport": "COM6",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "2a60fa61.f65a86",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "54938b6b.1ca0f4",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d34817ad2fd57a35",
+        "type": "ui_group",
+        "name": "Medidores",
+        "tab": "54938b6b.1ca0f4",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": true
+    },
+    {
+        "id": "54938b6b.1ca0f4",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     }
 ]
