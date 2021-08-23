@@ -78,5 +78,4 @@ Adicione o link para assistir ao vídeo do projeto funcionando.
 
 ### Referências 
 
-* [mastering-markdown](https://guides.github.com/features/mastering-markdown/)
-* [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+* [pdf Prof. Hellynson Node-Red with Twitter / Saving values in DB](https://fiapcom.sharepoint.com/sites/msteams_4b4b48/Documentos%20Compartilhados/Forms/AllItems.aspx?FolderCTID=0x01200050722CA271EDFD4C8EE81671575BBBB9&id=%2Fsites%2Fmsteams%5F4b4b48%2FDocumentos%20Compartilhados%2FDisruptive%20Architectures%20IOT%20e%20IA%2F2semestre%20%2D%20NAC4%2FDisruptiveArchitecturesIOTeIA%5FAula%2002%2Epdf&parent=%2Fsites%2Fmsteams%5F4b4b48%2FDocumentos%20Compartilhados%2FDisruptive%20Architectures%20IOT%20e%20IA%2F2semestre%20%2D%20NAC4)
