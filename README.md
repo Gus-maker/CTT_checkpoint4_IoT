@@ -47,7 +47,7 @@ O objetivo deste trabalho é fazer a própria rede meterológica, acompanhando a
 ## Diagrama do projeto
 
 ![image](https://user-images.githubusercontent.com/59034973/130476794-7d2303e5-d70e-48b6-b505-f6d1b32cf414.png)
-![Flow_image](https://user-images.githubusercontent.com/59034973/130477030-7b7db3c2-a453-485e-92bc-042c0aa02d26.PNG)
+![image](https://user-images.githubusercontent.com/59034973/130490316-1c7010ea-7d6e-421a-acb2-6582a2856ab9.png)
 
 
 ## Como usar 
