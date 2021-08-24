@@ -52,22 +52,46 @@ O objetivo deste trabalho é fazer a própria rede meterológica, acompanhando a
 
 ## Como usar 
 
+Ter os seguintes Progamas:
+
+- SimulIDE (Carregue o arquivo *".ino"* e o arquivo *".hex".*)
+- Node.js
+- Arduino IDE
+- lib ArduinoJson
+
+Usar esse comando no command prompt do Node.js:
+**npm install -g --unsafe-perm node-red**
+
+Esse comando garante a instalação do node-red, caso não tenha instalado.
+
+Baixar as seguintes extensões no node-red:
+
+1) Clique no Menu Hamburguer
+2) Manage Palette
+3) E pesquise:
+
+- node-red-dashboard
+- node-red-node-serialport
+- node-red-node-twitter
+- node-red-contrib-cloundantplus
 
 
-* Pode ser utilizado marcadores
-* Para ajudar na formatação
+Importe o arquivo *.json*:
 
-Ou qualquer outra tabulação:
+1) Clique no Menu Hamburguer
+2) Import para importar o nó.
 
-- [x] Youtube
+E clique em Deploy.
 
-Pode adicionar algum trecho de código, por exemplo para clonar esse repositório:
+Ao lado da *"/"* da URL digite *ui* para vizualizar o Dashboard.
 
-    cd /home/iot
-    git clone https://github.com/arnaldojr/templatenac
-    cd templatenac
-    ls
+Ex:
 
+XXX.X.X.X:XXXX/ui
+
+Para vizualizar os tweets de aviso sobre a velocidade do vento acesse:
+
+@trash_turn
 
 ## Link de vídeo demonstração
 
@@ -78,4 +102,4 @@ Adicione o link para assistir ao vídeo do projeto funcionando.
 
 ### Referências 
 
-* [pdf Prof. Hellynson Node-Red with Twitter / Saving values in DB](https://fiapcom.sharepoint.com/sites/msteams_4b4b48/Documentos%20Compartilhados/Forms/AllItems.aspx?FolderCTID=0x01200050722CA271EDFD4C8EE81671575BBBB9&id=%2Fsites%2Fmsteams%5F4b4b48%2FDocumentos%20Compartilhados%2FDisruptive%20Architectures%20IOT%20e%20IA%2F2semestre%20%2D%20NAC4%2FDisruptiveArchitecturesIOTeIA%5FAula%2002%2Epdf&parent=%2Fsites%2Fmsteams%5F4b4b48%2FDocumentos%20Compartilhados%2FDisruptive%20Architectures%20IOT%20e%20IA%2F2semestre%20%2D%20NAC4)
+[pdf Prof. Hellynson Node-Red with Twitter / Saving values in DB](https://fiapcom.sharepoint.com/sites/msteams_4b4b48/Documentos%20Compartilhados/Forms/AllItems.aspx?FolderCTID=0x01200050722CA271EDFD4C8EE81671575BBBB9&id=%2Fsites%2Fmsteams%5F4b4b48%2FDocumentos%20Compartilhados%2FDisruptive%20Architectures%20IOT%20e%20IA%2F2semestre%20%2D%20NAC4%2FDisruptiveArchitecturesIOTeIA%5FAula%2002%2Epdf&parent=%2Fsites%2Fmsteams%5F4b4b48%2FDocumentos%20Compartilhados%2FDisruptive%20Architectures%20IOT%20e%20IA%2F2semestre%20%2D%20NAC4)
